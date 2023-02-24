@@ -7,6 +7,11 @@ env:
   tag_new_version: ${GITHUB_SHA}
   artifact_repository: team4
 
+
+  enable_sonar:    "true"
+  sonar_organization: "asselya-agaidarova"
+  sonar_projectKey: "asselya-agaidarova_sonarqube-for-team4"
+  sonar_login: "8cb1f9456952761a1c96c37c53121d6d23e680e6"
 # This is a basic workflow to help you get started with Actions
 
 name: CDelivery
@@ -45,7 +50,19 @@ jobs:
       #    echo test, and deploy your project.
       # Runs a single command using the runners shell .
       - name: Clone a Repository
-        run: git clone ${{ env.repo }}
+        run: |
+          git clone ${{ env.repo }}
+          
+      - name: Setup sonarqube
+        if: ${{env.enable_sonar == 'true'}}
+        uses: warchant/setup-sonar-scanner@v3
+      - name: Run sonarqube
+        if: ${{env.enable_sonar == 'true'}}
+        run: sonar-scanner
+            -Dsonar.organization=${{ env.sonar_organization }}                              
+            -Dsonar.projectKey=${{ env.sonar_projectKey }}                         
+            -Dsonar.login=${{ env.sonar_login }}                                   
+            -Dsonar.host.url=https://sonarcloud.io
 
       - name: Build the image
         working-directory: ${{ env.app_name }}
