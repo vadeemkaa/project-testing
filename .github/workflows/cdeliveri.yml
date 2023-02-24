@@ -1,11 +1,11 @@
 env:
   repo: https://github.com/Luzifer/ots.git  #https://github.com/Aselya2507/project-testing.git
-  app_version: 3.0.0
+  app_version: 4.0.0
   region: us-central1
   project_id: ${{ secrets.PROJECT_ID }}
   app_name: ots
   tag_new_version: ${GITHUB_SHA}
-  artifarc_repository: team4
+  artifact_repository: team4
 
 # This is a basic workflow to help you get started with Actions
 
