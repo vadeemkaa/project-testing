@@ -60,7 +60,7 @@ jobs:
 
       - name: Authenticate to Repository
         run: |
-          gcloud auth configure-docker   ${{ env.region }}-docker.pkg.dev    
+          gcloud auth configure-docker    us-central1-docker.pkg.dev 
 
       - name: push
         run: docker push ${{ env.region }}-docker.pkg.dev/${{ env.project_id }}/${{ env.artifact_repository }}/${{ env.app_name }}:${{ env.tag_new_version }}    
