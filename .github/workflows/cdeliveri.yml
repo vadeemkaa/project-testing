@@ -50,7 +50,7 @@ jobs:
       - name: Build the image
         working-directory: ${{ env.app_name }}
         run: 
-          docker build -t ${{ env.region }}-docker.pkg.dev/${{ env.project_id }}/${{env.artifact_repository/${{ env.app_name }}:${{ env.tag_new_version }} .
+          docker build -t ${{ env.region }}-docker.pkg.dev/${{ env.project_id }}/${{ env.artifact_repository }}/${{ env.app_name }}:${{ env.tag_new_version }} .
 
       - name: Authenticate to Registry 
         id: 'auth'
@@ -63,4 +63,4 @@ jobs:
           gcloud auth configure-docker   ${{ env.region }}-docker.pkg.dev    
 
       - name: push
-        run: docker push ${{ env.region }}-docker.pkg.dev/${{ env.project_id }}/${{env.artifact_repository/${{ env.app_name }}:${{ env.tag_new_version }}    
+        run: docker push ${{ env.region }}-docker.pkg.dev/${{ env.project_id }}/${{ env.artifact_repository }}/${{ env.app_name }}:${{ env.tag_new_version }}    
