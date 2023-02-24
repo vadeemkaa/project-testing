@@ -6,7 +6,7 @@ env:
   project_id:         "${{ secrets.PROJECT_ID }}"
   repository:         "us-central1-docker.pkg.dev/${{ secrets.PROJECT_ID }}/team4/ots"
   cluster_name:       "project-cluster"
-  helm_repository:    "https://github.com/Aselya2507/project-testing.git"
+  helm_repository:    "https://github.com/Aselya2507/team4-project.git"
   google_domain_name: "aselya25789.com"
   environment:        "dev"
   
