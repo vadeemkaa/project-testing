@@ -11,7 +11,7 @@ env:
   enable_sonar:    "true"
   sonar_organization: "asselya-agaidarova"
   sonar_projectKey: "asselya-agaidarova_sonarqube-for-team4"
-  sonar_login: "8cb1f9456952761a1c96c37c53121d6d23e680e6"
+  sonar_login: ${{ secrets.SONAR_TOKEN }}
 # This is a basic workflow to help you get started with Actions
 
 name: CDelivery
