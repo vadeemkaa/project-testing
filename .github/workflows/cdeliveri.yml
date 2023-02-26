@@ -9,8 +9,8 @@ env:
 
 
   enable_sonar:    "true"
-  sonar_organization: "asselya-agaidarova"
-  sonar_projectKey: "asselya-agaidarova_sonarqube-for-team4"
+  sonar_organization: "grecu"
+  sonar_projectKey: "project-ots"
   sonar_login: ${{ secrets.SONAR_TOKEN }}
 
 
